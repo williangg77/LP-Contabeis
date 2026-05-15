@@ -5,314 +5,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ciências Contábeis - Faculdade São Vicente</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <!-- FONTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <style>
-
-    :root {
-      --azul: #0d1b3e;
-      --dourado: #c8a951;
-      --creme: #f5f0e8;
-    }
-
-    body {
-      margin:0;
-      font-family:'Lato', sans-serif;
-    }
-
-    h1,h2 {
-      font-family:'Playfair Display', serif;
-    }
-
-    /* NAVBAR */
-    header {
-      background:var(--azul);
-      display:flex;
-      align-items:center;
-      padding:10px 20px;
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:1000;
-    }
-
-    .logo {
-      height:70px;
-      margin-right:40px;
-    }
-
-    nav {
-      display:flex;
-      gap:25px;
-    }
-
-    nav a {
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    section {
-      padding:100px 20px 60px;
-    }
-
-    section:nth-child(even){
-      background:var(--creme);
-    }
-
-    /* HERO */
-    .hero {
-      text-align:center;
-      position:relative;
-    }
-
-    .hero img {
-      position:absolute;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:0.2;
-      top:0;
-      left:0;
-    }
-
-    .hero h1 {
-      font-size:48px;
-      color:var(--azul);
-      position:relative;
-    }
-
-    .hero p {
-      font-size:20px;
-      max-width:800px;
-      margin:auto;
-      position:relative;
-    }
-
-    /* BOTÃO */
-    .btn {
-      background:var(--dourado);
-      color:white;
-      padding:12px 25px;
-      border-radius:30px;
-      text-decoration:none;
-      display:inline-block;
-      margin-top:20px;
-      font-weight:bold;
-    }
-
-    /* GRADUAÇÃO */
-    .graduacao {
-      display:flex;
-      justify-content:center;
-      gap:60px;
-      text-align:center;
-    }
-
-    .graduacao div {
-      font-size:40px;
-      color:var(--azul);
-    }
-
-    .graduacao p {
-      font-size:16px;
-      font-weight:bold;
-    }
-
-    /* SOBRE */
-    .content {
-      display:flex;
-      gap:40px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .content img {
-      max-width:500px;
-      width:100%;
-    }
-
-    .text {
-      max-width:600px;
-    }
-
-    /* DIFERENCIAIS */
-    .diferenciais li {
-      background:var(--azul);
-      color:white;
-      padding:15px;
-      margin:10px 0;
-      border-radius:8px;
-    }
-
-    /* ÁREAS */
-    .areas {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .area img {
-      width:100%;
-      height:250px;
-      object-fit:cover;
-      border-radius:10px;
-    }
-
-    .area-title {
-      font-weight:bold;
-      margin-top:10px;
-    }
-
-    .area-desc {
-      font-size:14px;
-      color:#555;
-    }
-
-    /* FOOTER */
-    footer {
-      background:var(--azul);
-      color:white;
-      text-align:center;
-      padding:20px;
-    }
-
-    /* BOTÕES FLUTUANTES */
-    .btn-float {
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:var(--dourado);
-      color:white;
-      padding:15px;
-      border-radius:50px;
-      text-decoration:none;
-    }
-
-    .btn-whatsapp {
-      position:fixed;
-      bottom:80px;
-      right:20px;
-      background:#25D366;
-      color:white;
-      padding:15px;
-      border-radius:50px;
-      text-decoration:none;
-    }
-
-    /* ANIMAÇÃO */
-    .fade-in {
-      opacity:0;
-      transform:translateY(30px);
-      transition:0.8s;
-    }
-
-    .fade-in.show {
-      opacity:1;
-      transform:translateY(0);
-    }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
-  <img src="imagens/LOGO_SV.PNG" class="logo">
+
+  <a href="#">
+    <img src="imagens/LOGO_SV.PNG" alt="Logo São Vicente" class="logo">
+  </a>
+
   <nav>
-    <a href="#">Home</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#areas">Áreas</a>
+    <a href="#">🏠 Home</a>
+    <a href="#sobre">📘 Sobre o Curso</a>
+    <a href="#diferenciais">⭐ Diferenciais</a>
+    <a href="#areas">💼 Áreas de Atuação</a>
   </nav>
+
 </header>
 
-<section class="hero fade-in">
-  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<section class="hero fade-up">
+
+  <img class="background-img" src="imagens/fundo_curso.PNG" alt="Background Hero">
+
   <h1>Ciências Contábeis</h1>
-  <p>Forme-se com excelência e destaque no mercado financeiro.</p>
-  <a href="#" class="btn">Inscreva-se</a>
+
+  <p>
+    Forme-se para atuar com segurança e impacto no mercado financeiro e empresarial.
+    Desenvolva habilidades essenciais em contabilidade, auditoria e gestão estratégica,
+    e prepare-se para liderar decisões que transformam empresas.
+  </p>
+
+  <a href="https://faculdadesaovicente.edu.br/inscricao" target="_blank" class="btn-inscreva">
+    Inscreva-se
+  </a>
+
 </section>
 
-<section class="graduacao fade-in">
-  <div>
-    🎓
+<!-- GRADUAÇÃO -->
+<section class="graduacao fade-up">
+
+  <div class="item">
+    <span>🎓</span>
     <p>Graduação Presencial</p>
   </div>
-  <div>
-    💻
+
+  <div class="item">
+    <span>💻</span>
     <p>Graduação EAD</p>
   </div>
+
 </section>
 
-<section id="sobre" class="fade-in">
+<!-- SOBRE -->
+<section id="sobre" class="fade-up">
+
   <div class="content">
-    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c">
+
+    <img src="imagens/imagem_2.PNG" alt="Contabilidade">
+
     <div class="text">
+
       <h2>Sobre o Curso</h2>
-      <p>Formação completa em contabilidade, auditoria e gestão estratégica para o mercado atual.</p>
+
+      <p>
+        Aprenda a interpretar demonstrativos financeiros e otimizar recursos com eficiência.
+        Nosso curso oferece formação prática em contabilidade, controladoria e auditoria,
+        preparando você para contribuir diretamente com o crescimento de empresas.
+        Invista em uma carreira sólida e com oportunidades reais de crescimento em diversos setores.
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="diferenciais fade-in">
-  <h2>Diferenciais</h2>
+<!-- DIFERENCIAIS -->
+<section id="diferenciais" class="diferenciais fade-up">
+
+  <h2>Diferenciais do Curso</h2>
+
   <ul>
-    <li>Aprendizado prático</li>
-    <li>Atualização constante</li>
-    <li>Formação completa</li>
+
+    <li>
+      Aprendizado prático e aplicado – Exercícios e estudos de casos reais que preparam
+      o aluno para enfrentar desafios do dia a dia no mercado contábil.
+    </li>
+
+    <li>
+      Atualização constante – Conteúdos alinhados às mudanças na legislação,
+      normas contábeis e tendências do mercado financeiro.
+    </li>
+
+    <li>
+      Formação completa e multidisciplinar – Desenvolvimento de habilidades em
+      contabilidade, auditoria, finanças, análise de dados e gestão estratégica.
+    </li>
+
   </ul>
+
 </section>
 
-<section id="areas" class="fade-in">
+<!-- ÁREAS -->
+<section id="areas" class="fade-up">
+
   <h2>Áreas de Atuação</h2>
+
   <div class="areas">
+
     <div class="area">
-      <img src="imagens/trabalho_1landing.PNG">
+      <img src="imagens/trabalho_1landing.PNG" alt="Auditoria">
       <p class="area-title">Auditoria</p>
-      <p class="area-desc">Validação de dados financeiros.</p>
+      <p class="area-desc">
+        Profissional responsável por revisar e validar informações financeiras e contábeis.
+      </p>
     </div>
 
     <div class="area">
-      <img src="imagens/trabalho_2landing.PNG">
-      <p class="area-title">Controladoria</p>
-      <p class="area-desc">Gestão estratégica financeira.</p>
+      <img src="imagens/trabalho_2landing.PNG" alt="Controladoria Contábil">
+      <p class="area-title">Controladoria Contábil</p>
+      <p class="area-desc">
+        Atua no planejamento, análise e controle das finanças de uma empresa.
+      </p>
     </div>
 
     <div class="area">
-      <img src="imagens/trabalho_3landing.PNG">
-      <p class="area-title">Perícia</p>
-      <p class="area-desc">Análise técnica contábil.</p>
+      <img src="imagens/trabalho_3landing.PNG" alt="Perícia Contábil">
+      <p class="area-title">Perícia Contábil</p>
+      <p class="area-desc">
+        Especialista que investiga e produz pareceres técnicos financeiros.
+      </p>
     </div>
 
     <div class="area">
-      <img src="imagens/trabalho_4landing.PNG">
-      <p class="area-title">Consultoria</p>
-      <p class="area-desc">Planejamento tributário.</p>
+      <img src="imagens/trabalho_4landing.PNG" alt="Consultoria Tributária">
+      <p class="area-title">Consultoria Tributária</p>
+      <p class="area-desc">
+        Auxilia empresas na gestão eficiente de tributos e riscos fiscais.
+      </p>
     </div>
+
   </div>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-  Faculdade São Vicente
+
+  <p>Faculdade São Vicente</p>
+  <p>Telefone: +55 42 3422-8421</p>
+  <p>Email: secre.academica@faculdadesaovicente.edu.br</p>
+  <p>Endereço: Rua 24 de Maio, 538 - Centro, Irati - PR, 84500-099</p>
+
 </footer>
 
-<a href="#" class="btn-float">Saiba mais</a>
-<a href="https://wa.me/554234228421" class="btn-whatsapp">WhatsApp</a>
+<!-- BOTÕES -->
+<a class="btn-float" href="https://faculdadesaovicente.edu.br" target="_blank">
+  Quero saber mais
+</a>
 
-<script>
-const els = document.querySelectorAll('.fade-in');
+<a href="https://wa.me/554234228421" target="_blank" class="btn-whatsapp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  WhatsApp
+</a>
 
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
-
-  els.forEach(el => {
-    if (el.getBoundingClientRect().top < trigger) {
-      el.classList.add('show');
-    }
-  });
-});
-</script>
+<!-- JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
