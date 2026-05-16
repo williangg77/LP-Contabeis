@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Ciências Contábeis - Faculdade São Vicente</title>
 
   <!-- FONTES -->
@@ -10,23 +11,39 @@
 
   <style>
 
-    :root {
-      --azul: #0d1b3e;
-      --dourado: #c8a951;
-      --creme: #f5f0e8;
+    :root{
+      --azul:#0d1b3e;
+      --dourado:#c8a951;
+      --creme:#f5f0e8;
     }
 
-    body {
+    *{
       margin:0;
-      font-family:'Lato', sans-serif;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    h1,h2 {
+    body{
+      font-family:'Lato', sans-serif;
+      padding-top:90px;
+      overflow-x:hidden;
+      background:white;
+    }
+
+    h1,h2{
       font-family:'Playfair Display', serif;
     }
 
+    section{
+      padding:100px 20px 60px;
+    }
+
+    section:nth-child(even){
+      background:var(--creme);
+    }
+
     /* NAVBAR */
-    header {
+    header{
       background:var(--azul);
       display:flex;
       align-items:center;
@@ -37,180 +54,332 @@
       z-index:1000;
     }
 
-    .logo {
+    .logo{
       height:70px;
       margin-right:40px;
     }
 
-    nav {
+    nav{
       display:flex;
       gap:25px;
+      flex-wrap:wrap;
     }
 
-    nav a {
+    nav a{
       color:white;
       text-decoration:none;
       font-weight:bold;
+      transition:0.3s;
     }
 
-    section {
-      padding:100px 20px 60px;
-    }
-
-    section:nth-child(even){
-      background:var(--creme);
+    nav a:hover{
+      color:var(--dourado);
     }
 
     /* HERO */
-    .hero {
-      text-align:center;
+    .hero{
       position:relative;
+      min-height:100vh;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+      overflow:hidden;
     }
 
-    .hero img {
+    .background-img{
       position:absolute;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:0.2;
       top:0;
       left:0;
+
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+      opacity:0.2;
+
+      z-index:1;
     }
 
-    .hero h1 {
-      font-size:48px;
+    .hero h1,
+    .hero p,
+    .btn-inscreva{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero h1{
+      font-size:52px;
       color:var(--azul);
-      position:relative;
+      margin-bottom:20px;
     }
 
-    .hero p {
+    .hero p{
       font-size:20px;
-      max-width:800px;
-      margin:auto;
-      position:relative;
+      max-width:900px;
+      line-height:1.8;
+      color:var(--azul);
     }
 
-    /* BOTÃO */
-    .btn {
+    /* BOTÃO HERO */
+    .btn-inscreva{
       background:var(--dourado);
       color:white;
-      padding:12px 25px;
-      border-radius:30px;
+
+      padding:14px 28px;
+
+      border-radius:50px;
       text-decoration:none;
+
       display:inline-block;
-      margin-top:20px;
+      margin-top:25px;
+
       font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn-inscreva:hover{
+      transform:translateY(-3px);
+      background:#b8963f;
     }
 
     /* GRADUAÇÃO */
-    .graduacao {
+    .graduacao{
       display:flex;
       justify-content:center;
       gap:60px;
+      flex-wrap:wrap;
       text-align:center;
     }
 
-    .graduacao div {
-      font-size:40px;
+    .graduacao div{
+      font-size:45px;
       color:var(--azul);
     }
 
-    .graduacao p {
+    .graduacao p{
       font-size:16px;
-      font-weight:bold;
-    }
-
-    /* SOBRE */
-    .content {
-      display:flex;
-      gap:40px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .content img {
-      max-width:500px;
-      width:100%;
-    }
-
-    .text {
-      max-width:600px;
-    }
-
-    /* DIFERENCIAIS */
-    .diferenciais li {
-      background:var(--azul);
-      color:white;
-      padding:15px;
-      margin:10px 0;
-      border-radius:8px;
-    }
-
-    /* ÁREAS */
-    .areas {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .area img {
-      width:100%;
-      height:250px;
-      object-fit:cover;
-      border-radius:10px;
-    }
-
-    .area-title {
       font-weight:bold;
       margin-top:10px;
     }
 
-    .area-desc {
-      font-size:14px;
+    /* SOBRE */
+    .content{
+      display:flex;
+      gap:40px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .content img{
+      max-width:500px;
+      width:100%;
+      border-radius:12px;
+    }
+
+    .text{
+      max-width:650px;
+    }
+
+    .text h2{
+      margin-bottom:20px;
+      color:var(--azul);
+      font-size:38px;
+    }
+
+    .text p{
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* DIFERENCIAIS */
+    .diferenciais h2{
+      margin-bottom:30px;
+      color:var(--azul);
+    }
+
+    .diferenciais ul{
+      list-style:none;
+    }
+
+    .diferenciais li{
+      background:var(--azul);
+      color:white;
+
+      padding:18px;
+      margin:15px 0;
+
+      border-radius:10px;
+
+      line-height:1.7;
+    }
+
+    /* ÁREAS */
+    #areas h2{
+      margin-bottom:40px;
+      color:var(--azul);
+    }
+
+    .areas{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+    }
+
+    .area{
+      background:white;
+      border-radius:12px;
+      overflow:hidden;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+      transition:0.3s;
+    }
+
+    .area:hover{
+      transform:translateY(-5px);
+    }
+
+    .area img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .area-title{
+      font-weight:bold;
+      margin:15px 15px 5px;
+      font-size:20px;
+      color:var(--azul);
+    }
+
+    .area-desc{
+      margin:0 15px 20px;
+      line-height:1.6;
       color:#555;
     }
 
     /* FOOTER */
-    footer {
+    footer{
       background:var(--azul);
       color:white;
       text-align:center;
-      padding:20px;
+      padding:35px 20px;
+      line-height:2;
     }
 
     /* BOTÕES FLUTUANTES */
-    .btn-float {
+    .btn-float{
       position:fixed;
       bottom:20px;
       right:20px;
+
       background:var(--dourado);
       color:white;
-      padding:15px;
+
+      padding:15px 22px;
+
       border-radius:50px;
       text-decoration:none;
+
+      font-weight:bold;
+
+      z-index:999;
+      transition:0.3s;
     }
 
-    .btn-whatsapp {
+    .btn-float:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-whatsapp{
       position:fixed;
-      bottom:80px;
+      bottom:85px;
       right:20px;
+
       background:#25D366;
       color:white;
-      padding:15px;
+
+      padding:15px 22px;
+
       border-radius:50px;
       text-decoration:none;
+
+      font-weight:bold;
+
+      z-index:999;
+      transition:0.3s;
+    }
+
+    .btn-whatsapp:hover{
+      transform:translateY(-3px);
+    }
+
+    /* BOTÃO FLUTUANTE INSCRIÇÃO */
+    .btn-inscreva-float{
+      position:fixed;
+      bottom:150px;
+      right:20px;
+
+      background:var(--azul);
+      color:white;
+
+      padding:15px 22px;
+
+      border-radius:50px;
+      text-decoration:none;
+
+      font-weight:bold;
+
+      z-index:999;
+      transition:0.3s;
+    }
+
+    .btn-inscreva-float:hover{
+      transform:translateY(-3px);
+      background:#162a5c;
     }
 
     /* ANIMAÇÃO */
-    .fade-in {
+    .fade-in{
       opacity:0;
       transform:translateY(30px);
       transition:0.8s;
     }
 
-    .fade-in.show {
+    .fade-in.show{
       opacity:1;
       transform:translateY(0);
+    }
+
+    /* RESPONSIVO */
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav{
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .btn-inscreva-float{
+        bottom:145px;
+      }
+
     }
 
   </style>
@@ -218,104 +387,198 @@
 
 <body>
 
-<header>
-  <img src="imagens/LOGO_SV.png" class="logo">
-  <nav>
-    <a href="#">Home</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#areas">Áreas</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
 
-<section class="hero">
-  <img class="background-img" src="imagens/fundo_curso.png" alt="Background Hero">
-  <h1>Ciências Contábeis</h1>
-  <p>Forme-se para atuar com segurança e impacto no mercado financeiro e empresarial. Desenvolva habilidades essenciais em contabilidade, auditoria e gestão estratégica, e prepare-se para liderar decisões que transformam empresas.</p>
-  <a href="https://faculdadesaovicente.edu.br/inscricao" target="_blank" class="btn-inscreva">Inscreva-se</a>
-</section>
+    <img src="imagens/logo_sv.png" class="logo" alt="Logo São Vicente">
 
-<section class="graduacao fade-in">
-  <div>
-    🎓
-    <p>Graduação Presencial</p>
-  </div>
-  <div>
-    💻
-    <p>Graduação EAD</p>
-  </div>
-</section>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#areas">Áreas</a>
+    </nav>
 
-<section id="sobre" class="fade-in">
-  <div class="content">
-    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c">
-    <div class="text">
-      <h2>Sobre o Curso</h2>
-      <p>Aprenda a interpretar demonstrativos financeiros e otimizar recursos com eficiência. Nosso curso oferece formação prática em contabilidade, controladoria e auditoria, preparando você para contribuir diretamente com o crescimento de empresas. Invista em uma carreira sólida e com oportunidades reais de crescimento em diversos setores.</p>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="diferenciais fade-in">
-  <h2>Diferenciais</h2>
-  <ul>
-    <li>Aprendizado prático e aplicado – Exercícios e estudos de casos reais que preparam o aluno para enfrentar desafios do dia a dia no mercado contábil.</li>
-    <li>Atualização constante – Conteúdos alinhados às mudanças na legislação, normas contábeis e tendências do mercado financeiro.</li>
-    <li>Formação completa e multidisciplinar – Desenvolvimento de habilidades em contabilidade, auditoria, finanças, análise de dados e gestão estratégica.</li>
-  </ul>
-</section>
+  <!-- HERO -->
+  <section class="hero fade-in">
 
-<section id="areas" class="fade-in">
-  <h2>Áreas de Atuação</h2>
-  <div class="areas">
-    <div class="area">
-      <img src="imagens/trabalho_1landing.png">
-      <p class="area-title">Auditoria</p>
-      <p class="area-desc">Validação de dados financeiros.</p>
+    <img class="background-img"
+         src="imagens/fundo_curso.png"
+         alt="Background Hero">
+
+    <h1>Ciências Contábeis</h1>
+
+    <p>
+      Forme-se para atuar com segurança e impacto no mercado financeiro e empresarial.
+      Desenvolva habilidades essenciais em contabilidade, auditoria e gestão estratégica,
+      e prepare-se para liderar decisões que transformam empresas.
+    </p>
+
+    <a href="https://faculdadesaovicente.edu.br/inscricao"
+       target="_blank"
+       class="btn-inscreva">
+
+       Inscreva-se
+
+    </a>
+
+  </section>
+
+  <!-- GRADUAÇÃO -->
+  <section class="graduacao fade-in">
+
+    <div>
+      🎓
+      <p>Graduação Presencial</p>
     </div>
 
-    <div class="area">
-      <img src="imagens/trabalho_2landing.png">
-      <p class="area-title">Controladoria</p>
-      <p class="area-desc">Gestão estratégica financeira.</p>
+    <div>
+      💻
+      <p>Graduação EAD</p>
     </div>
 
-    <div class="area">
-      <img src="imagens/trabalho_3landing.png">
-      <p class="area-title">Perícia</p>
-      <p class="area-desc">Análise técnica contábil.</p>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="fade-in">
+
+    <div class="content">
+
+      <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80">
+
+      <div class="text">
+
+        <h2>Sobre o Curso</h2>
+
+        <p>
+          Aprenda a interpretar demonstrativos financeiros e otimizar recursos com eficiência.
+          Nosso curso oferece formação prática em contabilidade, controladoria e auditoria,
+          preparando você para contribuir diretamente com o crescimento de empresas.
+        </p>
+
+      </div>
+
     </div>
 
-    <div class="area">
-      <img src="imagens/trabalho_4landing.png">
-      <p class="area-title">Consultoria</p>
-      <p class="area-desc">Planejamento tributário.</p>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="diferenciais fade-in">
+
+    <h2>Diferenciais</h2>
+
+    <ul>
+
+      <li>
+        Aprendizado prático e aplicado com estudos de casos reais.
+      </li>
+
+      <li>
+        Conteúdo atualizado conforme o mercado financeiro.
+      </li>
+
+      <li>
+        Formação completa em auditoria, gestão e análise financeira.
+      </li>
+
+    </ul>
+
+  </section>
+
+  <!-- ÁREAS -->
+  <section id="areas" class="fade-in">
+
+    <h2>Áreas de Atuação</h2>
+
+    <div class="areas">
+
+      <div class="area">
+        <img src="imagens/trabalho_1landing.png">
+        <p class="area-title">Auditoria</p>
+        <p class="area-desc">Validação de dados financeiros.</p>
+      </div>
+
+      <div class="area">
+        <img src="imagens/trabalho_2landing.png">
+        <p class="area-title">Controladoria</p>
+        <p class="area-desc">Gestão estratégica financeira.</p>
+      </div>
+
+      <div class="area">
+        <img src="imagens/trabalho_3landing.png">
+        <p class="area-title">Perícia</p>
+        <p class="area-desc">Análise técnica contábil.</p>
+      </div>
+
+      <div class="area">
+        <img src="imagens/trabalho_4landing.png">
+        <p class="area-title">Consultoria</p>
+        <p class="area-desc">Planejamento tributário.</p>
+      </div>
+
     </div>
-  </div>
-</section>
 
-<footer>
-  <p>Faculdade São Vicente</p>
-  <p>Telefone: +55 42 3422-8421</p>
-  <p>Email: secre.academica@faculdadesaovicente.edu.br</p>
-  <p>Endereço: Rua 24 de Maio, 538 - Centro, Irati - PR, 84500-099</p>
-</footer>
+  </section>
 
-<a href="#" class="btn-float">Saiba mais</a>
-<a href="https://wa.me/554234228421" class="btn-whatsapp">WhatsApp</a>
+  <!-- FOOTER -->
+  <footer>
 
-<script>
-const els = document.querySelectorAll('.fade-in');
+    <p>Faculdade São Vicente</p>
+    <p>Telefone: +55 42 3422-8421</p>
+    <p>Email: secre.academica@faculdadesaovicente.edu.br</p>
+    <p>Endereço: Rua 24 de Maio, 538 - Centro, Irati - PR</p>
 
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
+  </footer>
 
-  els.forEach(el => {
-    if (el.getBoundingClientRect().top < trigger) {
-      el.classList.add('show');
-    }
-  });
-});
-</script>
+  <!-- BOTÕES FLUTUANTES -->
+
+  <a href="https://faculdadesaovicente.edu.br"
+     target="_blank"
+     class="btn-float">
+
+     Saiba mais
+
+  </a>
+
+  <a href="https://wa.me/554234228421"
+     target="_blank"
+     class="btn-whatsapp">
+
+     WhatsApp
+
+  </a>
+
+  <a href="https://faculdadesaovicente.edu.br/inscricao"
+     target="_blank"
+     class="btn-inscreva-float">
+
+     🎓 Inscreva-se
+
+  </a>
+
+  <!-- SCRIPT -->
+  <script>
+
+    const els = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+
+      });
+
+    }, {
+      threshold:0.15
+    });
+
+    els.forEach(el => observer.observe(el));
+
+  </script>
 
 </body>
 </html>
